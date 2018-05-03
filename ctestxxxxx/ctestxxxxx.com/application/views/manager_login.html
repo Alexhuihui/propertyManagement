@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        div{
+            border: 8px solid #6d8bc1;
+            width: 500px;
+            height: 70px;
+            padding: 420px 50px 50px 300px ;
+            background-image: url(/images/denluyemian.jpg);
+
+            position: relative;
+
+            left: 370px;
+            top: 50px;
+
+
+        }
+
+
+        body{
+            background-image: url(/images/background.jpg);
+        }
+
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+<div>
+    <form method="post" action="<?php   echo site_url('login/login');?>">
+        <table>
+            <tr>
+                <td><strong>登录选择：</strong></td>
+                <td><select name="select"><option value="1">社区居民</option><option value="2">管理员</option></select></td>
+            </tr>
+            <tr>
+                <td><strong>用户名：</strong></td>
+                <td><input type="text" name="managername" value="<?php   echo set_value('managername');?>">
+                    <?php   echo form_error('managername', '<span>', '</span>');?></td>
+            </tr>
+            <tr>
+                <td><strong>密码：</strong></td>
+                <td><input type="password" name="managerpass" value="<?php   echo set_value('managerpass');?>">
+                    <?php   echo form_error('managerpass', '<span>', '</span>');?></td>
+            </tr>
+            <tr >
+                <td><input type="submit" value="登录" style=background-color:#3c8dbc;font-size:22px;color:#fff;font-family:楷体></td>
+                <td><a href="<?php   echo site_url('owner_register/owner_register');?>"><input type="button" value="用户注册" style=background-color:#3c8dbc;font-size:22px;color:#fff;font-family:楷体></a></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

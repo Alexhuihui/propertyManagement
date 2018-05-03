@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <title>用户编辑资料</title>
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-inverse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<?php echo site_url('login');?>">退出</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="<?php echo site_url('owner_skip/owner_display');?>">查看个人信息</a></li>
+                <li><a href="<?php echo site_url('owner_skip/owner_display');?>">查看缴费信息</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">当前用户</a></li>
+                <li><a href="<?php echo site_url('owner_skip/edit_owner');?>"><?php echo $owner[0]['username']?></a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+<form method="post" action="<?php   echo site_url('owner/edit_owner');?>">
+    <table class="table-bordered table-hover table">
+    <tboty align="center">
+        <tr>
+            <td>手机号</td>
+            <td><input type="text" name="telnum" value="<?php echo  $owner[0]['telnum']?>"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" name="passwd" value="<?php echo  $owner[0]['telnum']?>"></td>
+        </tr>
+        <tr>
+            <td>用户名</td>
+            <td><input type="text" name="username" value="<?php echo  $owner[0]['username']?>"></td>
+        </tr>
+        <tr>
+            <td>职业</td>
+            <td><input type="text" name="profession" value="<?php echo  $owner[0]['profession']?>"></td>
+        </tr>
+        <tr>
+            <td>房屋面积</td>
+            <td><input type="text" name="acreage" value="<?php echo  $owner[0]['acreage']?>"></td>
+        </tr>
+        <tr>
+            <td>常住人口数</td>
+            <td><input type="text" name="population" value="<?php echo  $owner[0]['population']?>"></td>
+        </tr>
+        <tr>
+            <td>地址</td>
+            <td><input type="text" name="location" value="<?php echo  $owner[0]['location']?>"></td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td>
+                <input type="radio" name="genderid" value="2" checked>男
+                <input type="radio" name="genderid" value="3">女
+            </td>
+            <input type="hidden" name="ownerid" value="<?php echo  $owner[0]['ownerid']?>">
+        </tr>
+        <tboty>
+    </table>
+    <input type="submit" value="修改">
+</form>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="<?php  echo base_url('js/bootstrap.min.js');?>"></script>
+</body>
+</html>

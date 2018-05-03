@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <title>编辑资料</title>
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-inverse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<?php echo site_url('login');?>">退出</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="<?php  echo site_url('manager/read');?>">管理业主</a></li>
+                <li><a href="<?php  echo site_url('manager_skip/owner_register');?>">添加业主</a></li>
+                <li><a href="<?php echo site_url('charge/read');?>">管理物业费</a></li>
+                <li><a href="<?php  echo site_url('charge_skip/charge_register');?>">添加缴费记录</a></li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+<form method="post" action="<?php   echo site_url('manager/owner_edit');?>">
+    <table class="table-bordered table-hover table">
+        <tr>
+            <td><strong>手机号</strong></td>
+            <td><input type="text" name="telnum" value="<?php echo  $owner[0]['telnum']?>"></td>
+        </tr>
+        <tr>
+            <td><strong>密码</strong></td>
+            <td><input type="password" name="passwd" value="<?php echo  $owner[0]['telnum']?>"></td>
+        </tr>
+        <tr>
+            <td><strong>用户名</strong></td>
+            <td><input type="text" name="username" value="<?php echo  $owner[0]['username']?>"></td>
+        </tr>
+        <tr>
+            <td><strong>职业</strong></td>
+            <td><input type="text" name="profession" value="<?php echo  $owner[0]['profession']?>"></td>
+        </tr>
+        <tr>
+            <td><strong>房屋面积</strong></td>
+            <td><input type="text" name="acreage" value="<?php echo  $owner[0]['acreage']?>"></td>
+        </tr>
+        <tr>
+            <td><strong>常住人口数</strong></td>
+            <td><input type="text" name="population" value="<?php echo  $owner[0]['population']?>"></td>
+        </tr>
+        <tr>
+            <td><strong>地址</strong></td>
+            <td><input type="text" name="location" value="<?php echo  $owner[0]['location']?>"></td>
+        </tr>
+        <tr>
+            <td><strong>性别</strong></td>
+            <td>
+                <input type="radio" name="genderid" value="2" checked>男
+                <input type="radio" name="genderid" value="3">女
+            </td>
+            <input type="hidden" name="ownerid" value="<?php echo  $owner[0]['ownerid']?>">
+        </tr>
+    </table>
+    <input type="submit" value="确定">
+</form>
+</div>
+</body>
+</html>

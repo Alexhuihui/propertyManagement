@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <title>管理业主信息</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-inverse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<?php echo site_url('login');?>">退出</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="<?php  echo site_url('manager/read');?>">管理业主</a></li>
+                <li><a href="<?php  echo site_url('manager_skip/owner_register');?>">添加业主</a></li>
+                <li><a href="<?php echo site_url('charge/read');?>">管理物业费</a></li>
+                <li><a href="<?php  echo site_url('charge_skip/charge_register');?>">添加缴费记录</a></li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <table class="table-bordered table-hover table">
+        <tr align="center" >
+            <td><strong>id号<strong></td>
+            <td><strong>电话<strong></td>
+            <td><strong>名字<strong></td>
+            <td><strong>性别<strong></td>
+            <td><strong>注册时间<strong></td>
+            <td><strong>职业<strong></td>
+            <td><strong>住房面积<strong></td>
+            <td><strong>常住人口<strong></td>
+            <td><strong>操作<strong></td>
+        </tr>
+        <?php foreach($user as $u):?>
+        <tr align="center">
+            <td><?php echo $u['ownerid'];?></td>
+            <td><?php echo $u['telnum'];?></td>
+            <td><?php echo $u['username'];?></td>
+            <td><?php
+                    if($u['genderid'] == 1)
+                    {
+                        echo '未知';
+                    }
+                    else if($u['genderid'] == 2)
+                    {
+                        echo '男';
+                    }
+                    else
+                    {
+                        echo '女';
+                    }
+                ?>
+            </td>
+            <td>
+                <?php
+                    $time = $u['time'];
+                    $datestring = 'Year: %Y Month: %m Day: %d - %h:%i %a';
+                    echo mdate($datestring, $time);
+                ?>
+            </td>
+            <td><?php echo $u['profession'];?></td>
+            <td><?php echo $u['acreage'];?></td>
+            <td><?php echo $u['population'];?></td>
+            <td>
+                [<a color=black href="<?php echo  site_url('manager_skip/owner_edit/'.$u['ownerid']);?>"><B>编辑</B></a>]
+                [<a href="<?php echo  site_url('manager/owner_del/'.$u['ownerid']);?>"><B>删除</B></a>]
+            </td>
+        </tr>
+        <?php endforeach;?>
+    </table>
+    <div>
+        <?php   echo $links;?>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="<?php  echo base_url('js/bootstrap.min.js');?>"></script>
+</body>
+</html>

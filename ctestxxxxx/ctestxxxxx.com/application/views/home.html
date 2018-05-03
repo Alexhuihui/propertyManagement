@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <title></title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-inverse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<?php echo site_url('login');?>">退出</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="<?php  echo site_url('manager/read');?>">管理业主</a></li>
+                <li><a href="<?php  echo site_url('manager_skip/owner_register');?>">添加业主</a></li>
+                <li><a href="<?php echo site_url('charge/read');?>">管理物业费</a></li>
+                <li><a href="<?php  echo site_url('charge_skip/charge_register');?>">添加缴费记录</a></li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="jumbotron">
+        <h1>欢迎来到物业信息查询界面</h1>
+        <p>这是一个基于bootstrap前端框架和ci后端框架的物业信息管理系统。</p>
+        <p>伴随着小区的规模不断扩大和住户不断增多，小区物业管理的工作量也随之增加，因此设计一套效率高、差错少的小区物业管理系统十分有必要。</p>
+        <p>这也是物业管理走向科学化、信息化、现代化的重要标志。</p>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="<?php  echo base_url('js/bootstrap.min.js');?>"></script>
+</body>
+</html>

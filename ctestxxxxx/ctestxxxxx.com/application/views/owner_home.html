@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <title>用户主界面</title>
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-inverse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<?php echo site_url('login');?>">退出</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="<?php echo site_url('owner_skip/owner_display');?>">查看个人信息</a></li>
+                <li><a href="<?php echo site_url('owner_skip/owner_display');?>">查看缴费信息</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">当前用户</a></li>
+                <li><a href="<?php echo site_url('owner_skip/edit_owner');?>"><?php echo $owner[0]['username']?></a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="jumbotron">
+        <h1>欢迎来到物业信息查询界面</h1>
+        <p>在这里你可以查看个人信息并修改个人信息。</p>
+        <p>在这里你可以查看物业费缴纳情况。</p>
+        <p>在这里你可以体验到物业信息管理系统的便捷。</p>
+        <p>未来还有更多，敬请期待......</p>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="<?php  echo base_url('js/bootstrap.min.js');?>"></script>
+</body>
+</html>

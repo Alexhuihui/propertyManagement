@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <title>用户注册</title>
+</head>
+<style>
+    span{
+        color: red;
+    }
+</style>
+<body>
+<div class="container-fluid">
+    <form method="post" action="<?php   echo site_url('owner_register/insert_owner');?>">
+        <table class="table-bordered table-hover table">
+            <tr>
+                <td>手机号</td>
+                <td><input type="text" name="telnum" value="<?php   echo set_value('telnum');?>">
+                    <?php   echo form_error('telnum', '<span>', '</span>');?></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="password" name="passwd" value="<?php   echo set_value('passwd');?>">
+                    <?php   echo form_error('passwd', '<span>', '</span>');?></td>
+            </tr>
+            <tr>
+                <td>用户名</td>
+                <td><input type="text" name="username" value="<?php   echo set_value('username');?>">
+                    <?php   echo form_error('username', '<span>', '</span>');?></td>
+            </tr>
+            <tr>
+                <td>职业</td>
+                <td><input type="text" name="profession"></td>
+            </tr>
+            <tr>
+                <td>房屋面积</td>
+                <td><input type="text" name="acreage"></td>
+            </tr>
+            <tr>
+                <td>常住人口数</td>
+                <td><input type="text" name="population"></td>
+            </tr>
+            <tr>
+                <td>地址</td>
+                <td><input type="text" name="location" value="<?php   echo set_value('location');?>">
+                    <?php   echo form_error('location', '<span>', '</span>');?></td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio" name="genderid" value="2" checked>男
+                    <input type="radio" name="genderid" value="3">女
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="提交">
+    </form>
+    </div>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="<?php  echo base_url('js/bootstrap.min.js');?>"></script>
+</body>
+</html>
